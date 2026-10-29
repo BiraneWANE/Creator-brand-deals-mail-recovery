@@ -1,0 +1,54 @@
+# Règles métier du pipeline. Ce fichier se relit et se modifie sans toucher au code.
+
+# Adresses de la créatrice elle-même (et de son foyer) : jamais considérées comme interlocutrices.
+own_addresses:
+  - creatrice@example.com
+  - foyer@example.com
+
+# Recherches Gmail : on part des mails ENVOYÉS par la créatrice.
+# Un partenariat réel laisse forcément une réponse de sa part ; cela élimine
+# d'emblée l'essentiel des sollicitations de masse restées sans suite.
+queries:
+  - name: documents
+    q: "in:sent (facture OR devis OR contrat)"
+  - name: collaborations
+    q: 'in:sent (collaboration OR partenariat OR collab OR brief OR UGC OR campagne OR tarif OR offert OR "code promo") -facture -devis -contrat'
+
+# Messageries grand public : l'interlocuteur est identifié par son adresse, pas par le domaine.
+freemail_domains:
+  - gmail.com
+  - googlemail.com
+  - hotmail.com
+  - hotmail.fr
+  - outlook.fr
+  - outlook.com
+  - yahoo.fr
+  - icloud.com
+
+# Domaines hors périmètre (autres activités du foyer, administrations, services en ligne).
+noise_domains:
+  - accounts.google.com
+  - amazon.fr
+  - zoom.us
+  - docs.google.com
+  - impots.gouv.fr
+  - ameli.fr
+
+# Pièces jointes à garder : documents commerciaux.
+attachments:
+  keep_mime:
+    - application/pdf
+    - application/msword
+    - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+  # Une image n'est gardée que si son nom évoque un document commercial (facture photographiée...)
+  image_keywords: [facture, invoice, contrat, contract, devis, quote, "bon de commande", brief, accord, convention]
+  ignore_patterns: ['^image\d{3}\.(png|jpe?g|gif)$', '^IMG_\d+', '^logo', '^signature']
+  # Au-delà, le message n'est pas téléchargé : il est listé pour récupération manuelle.
+  max_message_bytes: 6500000
+
+# Repérage des documents émis par la créatrice elle-même (en-tête de ses factures).
+issuer_markers: ["EXEMPLE CRÉATRICE", "SIREN 000000000"]
+
+# Règle de relance : collaboration réussie ou contact chaleureux, sans échange depuis N mois.
+relance:
+  months_without_contact: 6

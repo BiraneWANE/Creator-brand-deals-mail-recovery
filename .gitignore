@@ -1,0 +1,37 @@
+# Données : jamais dans le dépôt (le garde-fou scripts/check_no_pii.py vérifie aussi)
+*.pdf
+*.doc
+*.docx
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.zip
+*.sqlite
+*.db
+*.jsonl
+*.eml
+*.mbox
+documents/
+sortie/
+demo_output/
+data/
+
+# Identifiants
+token.json
+credentials.json
+client_secret*.json
+.env
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Sauvegarde git transportable
+*.bundle
+
+# Supports de formation : gardés en local, jamais publiés
+/docs/cours/

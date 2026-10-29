@@ -1,0 +1,109 @@
+{
+ "_note": "Agrégats anonymes de la mission réelle (octobre 2026) : uniquement des comptages, aucun nom, aucune adresse, aucun montant.",
+ "entonnoir": [
+  [
+   "Conversations dans la boîte",
+   12386
+  ],
+  [
+   "Conversations candidates (2 recherches)",
+   1379
+  ],
+  [
+   "Interlocuteurs distincts",
+   667
+  ],
+  [
+   "Partenariats confirmés",
+   360
+  ],
+  [
+   "À relancer",
+   204
+  ]
+ ],
+ "documents": {
+  "conversations_avec_documents": 147,
+  "documents_extraits": 183,
+  "contrats": 53,
+  "briefs": 51,
+  "factures_emises": 50,
+  "autres": 29,
+  "trop_lourds_a_recuperer": 13
+ },
+ "partenariats_par_annee_et_type": {
+  "2026": {
+   "produit offert": 19,
+   "payée": 13,
+   "événement": 2,
+   "mixte": 3,
+   "UGC": 1,
+   "campagne": 2
+  },
+  "2022": {
+   "mixte": 6,
+   "produit offert": 18,
+   "payée": 7,
+   "événement": 4,
+   "campagne": 2
+  },
+  "2025": {
+   "payée": 14,
+   "produit offert": 31,
+   "mixte": 6,
+   "UGC": 3,
+   "événement": 12,
+   "campagne": 3
+  },
+  "2024": {
+   "payée": 14,
+   "produit offert": 26,
+   "mixte": 3,
+   "événement": 14,
+   "campagne": 2
+  },
+  "2023": {
+   "événement": 7,
+   "produit offert": 26,
+   "mixte": 2,
+   "payée": 7,
+   "campagne": 1
+  },
+  "2021": {
+   "produit offert": 33,
+   "payée": 18,
+   "mixte": 6,
+   "campagne": 4,
+   "événement": 6
+  },
+  "2020": {
+   "produit offert": 31,
+   "mixte": 7,
+   "payée": 4,
+   "campagne": 2
+  },
+  "2019": {
+   "produit offert": 1
+  }
+ },
+ "types": {
+  "produit offert": 185,
+  "mixte": 33,
+  "payée": 77,
+  "événement": 45,
+  "UGC": 4,
+  "campagne": 16
+ },
+ "statuts": {
+  "non facturée": 131,
+  "inconnu": 62,
+  "payée": 25,
+  "en attente": 23,
+  "abandonnée": 119
+ },
+ "execution": {
+  "lots_lus_en_parallele": 27,
+  "taille_lot": 25,
+  "conversations_libellees": 845
+ }
+}

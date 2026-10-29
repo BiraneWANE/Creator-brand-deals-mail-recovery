@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "branddeals"
+version = "0.1.0"
+description = "Reconstituer l'historique commercial d'une créatrice de contenu à partir de sa boîte Gmail : partenariats, contrats, factures, relances"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Birane WANE" }]
+dependencies = [
+  "openpyxl>=3.1",
+  "pypdf>=4.0",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+# Connexion réelle à Gmail (API officielle Google)
+gmail = [
+  "google-api-python-client>=2.100",
+  "google-auth-oauthlib>=1.2",
+]
+# Lecture des conversations par un modèle de langage
+llm = ["anthropic>=0.40"]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+branddeals = "branddeals.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+branddeals = ["schema.sql"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

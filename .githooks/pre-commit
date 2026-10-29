@@ -1,0 +1,3 @@
+#!/bin/sh
+# Bloque le commit si des données personnelles sont détectées.
+python3 scripts/check_no_pii.py || exit 1
